@@ -85,6 +85,8 @@ module Kitchen
         default_config :custom_pre_play_command, nil
         default_config :custom_post_install_command, nil
         default_config :custom_post_play_command, nil
+        default_config :custom_pre_prepare_command, nil
+        default_config :custom_post_prepare_command, nil
         default_config :show_command_output, false
         default_config :ignore_ansible_cfg, false
 
