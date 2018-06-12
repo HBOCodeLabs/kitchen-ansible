@@ -263,13 +263,14 @@ module Kitchen
 
       def custom_pre_prepare_command
         <<-PREPARE
-          #{config:[custom_pre_prepare_command]}
+
+          #{config[:custom_pre_prepare_command]}
         PREPARE
       end
 
       def custom_post_prepare_command
         <<-PREPARE
-          #{config:[custom_post_prepare_command]}
+          #{config[:custom_post_prepare_command]}
         PREPARE
       end
 
