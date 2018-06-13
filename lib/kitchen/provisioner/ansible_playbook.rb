@@ -270,6 +270,7 @@ module Kitchen
 
       def custom_post_prepare_command
         <<-PREPARE
+
           #{config[:custom_post_prepare_command]}
         PREPARE
       end
