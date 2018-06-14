@@ -261,6 +261,20 @@ module Kitchen
         INSTALL
       end
 
+      def custom_pre_prepare_command
+        <<-PREPARE
+
+          #{config[:custom_pre_prepare_command]}
+        PREPARE
+      end
+
+      def custom_post_prepare_command
+        <<-PREPARE
+
+          #{config[:custom_post_prepare_command]}
+        PREPARE
+      end
+
       def init_command
         dirs = %w(modules roles group_vars host_vars)
                .map { |dir| File.join(config[:root_path], dir) }.join(' ')
@@ -374,7 +388,7 @@ module Kitchen
           ].join(' ')
         end
 
-        command = commands.join(' && ')
+        command = custom_pre_prepare_command + commands.join(' && ') + custom_post_prepare_command
         debug("*** COMMAND TO RUN:")
         debug(command)
         command
