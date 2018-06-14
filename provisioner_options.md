@@ -60,8 +60,10 @@ callback_plugins_path | callback_plugins | Ansible repo `callback_plugins` direc
 chef_bootstrap_url | `https://www.chef.io/chef/install.sh` | The Chef install
 custom_pre_install_command | nil | Custom shell command to be used at beginning of install stage. Can be multiline.
 custom_pre_play_command | nil | Custom shell command to be used before the ansible play stage. Can be multiline. See examples below.
+custom_pre_prepare_command | nil | Custom shell command to be used before the prepare_command is executed. Cann be multiline
 custom_post_install_command | nil | Custom shell command to be used at after the install stage. Can be multiline.
 custom_post_play_command | nil | Custom shell command to be used after the ansible play stage. Can be multiline. See examples below.
+custom_post_prepare_command | nil | Custom shell command to be used after the prepare_command is run. Can be multiline
 enable_yum_epel | false | Enable the `yum` EPEL repo
 env_vars | Hash.new | Hash to set environment variable to use with `ansible-playbook` command
 extra_vars | Hash.new | Hash to set the `extra_vars` passed to `ansible-playbook` command
